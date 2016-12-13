@@ -1,0 +1,13 @@
+{
+  "name": "lyonjug-testjs",
+  "version": "1.0.0",
+  "description": "Project used for a LyonJug session to present JS tests",
+  "main": "index.js",
+  "repository": "https://github.com/Dev-Mind/lyonjug-testjs.git",
+  "author": "Guillaume EHRET < Dev-Mind >",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine": "^2.5.2",
+    "protractor": "^4.0.13"
+  }
+}
