@@ -1,4 +1,4 @@
-export class MistakeOnScope {
+export default class MistakeOnScope {
 
   exemple1() {
     var test = i;

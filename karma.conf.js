@@ -1,34 +1,22 @@
 // Karma configuration
-// Generated on Thu Dec 15 2016 08:46:48 GMT+0100 (CET)
+// Generated on Thu Dec 15 2016 16:51:17 GMT+0100 (CET)
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './',
+    basePath: '',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['karma-systemjs', 'jasmine'],
+    frameworks: ['jasmine'],
 
-    systemjs: {
-      configFile: 'module.conf.js',
-      paths: {
-        'plugin-babel': 'node_modules/systemjs-plugin-babel/plugin-babel.js',
-        'systemjs-babel-build': 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
-        'systemjs': 'node_modules/systemjs/dist/system.js',
-        'system-polyfills': 'node_modules/systemjs/dist/system-polyfills.js',
-        'es6-module-loader': 'node_modules/es6-module-loader/dist/es6-module-loader.js'
-      },
-      serveFiles: [
-        'src/**/*.js'
-      ]
-    },
 
     // list of files / patterns to load in the browser
     files: [
-      'src/js/**/*.js'
+      {pattern: 'src/js/**/*.js', included: false},
+      {pattern: 'src/js/**/*.spec.js', included: false}
     ],
 
 
@@ -40,8 +28,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/js/**/*.js': ['babel']
     },
 
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015', {"modules": true}],
+        sourceMap: 'inline'
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

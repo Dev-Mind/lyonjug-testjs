@@ -7,13 +7,12 @@
   "author": "Guillaume EHRET < Dev-Mind >",
   "license": "MIT",
   "dependencies": {
-    "es6-module-loader": "^0.17.11",
+    "babel-preset-es2015": "^6.18.0",
     "jasmine": "^2.5.2",
     "karma": "^1.3.0",
+    "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-systemjs": "^0.16.0",
-    "systemjs": "^0.19.41",
-    "systemjs-plugin-babel": "^0.0.17"
-  }
+    "karma-jasmine": "^1.1.0"
+  },
+  "devDependencies": {}
 }
