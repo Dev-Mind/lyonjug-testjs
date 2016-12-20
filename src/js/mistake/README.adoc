@@ -1,0 +1,5 @@
+Le but est de montrer des erreurs courantes en JavaScript
+
+* problème égalité (opérateurs ==, !=, ===, !==) `equality/MistakeOnEqualitySpec.js`
+* problème de Scope `var_scope/MistakeOnScope.js`
+* problème de this `this/MistakeOnThis.js`

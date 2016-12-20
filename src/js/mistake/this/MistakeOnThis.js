@@ -1,21 +1,21 @@
 /**
  * Mistake :  Incorrect references to this
  */
-export default class MistakeOnThis {
+class MistakeOnThis {
 
   constructor(){
     this.colors  = ['Red', 'Blue', 'Yellow'];
     this.favorite = 'Blue';
   }
 
-  exemple1(){
+  thisBehaviorInEmbeddedFunctionk(){
     let result = this.colors.filter(function(color){
       return color === this.favorite;
     });
     return result;
   }
 
-  exemple2(){
+  thisBehaviorInArrayFunction(){
     let result = this.colors.filter((color) => color === this.favorite);
     return result;
   }

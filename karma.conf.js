@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Dec 15 2016 16:51:17 GMT+0100 (CET)
+// Generated on Thu Dec 15 2016 22:06:45 GMT+0100 (CET)
 
 module.exports = function(config) {
   config.set({
@@ -10,13 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'browserify'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'src/js/**/*.js', included: false},
-      {pattern: 'src/js/**/*.spec.js', included: false}
+      'src/js/**/*.js'
     ],
 
 
@@ -28,27 +27,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-     // 'src/js/**/*.js': ['babel'],
-      'src/js/**/*.js': ['browserify']
     },
 
-    // babelPreprocessor: {
-    //   options: {
-    //     presets: ['es2015'],
-    //     sourceMap: 'inline'
-    //   },
-    //   filename: function (file) {
-    //     return file.originalPath.replace(/\.js$/, '.es5.js');
-    //   },
-    //   sourceFileName: function (file) {
-    //     return file.originalPath;
-    //   }
-    // },
-      browserify: {
-          debug: true,
-          transform: [ 'brfs', 'browserify-shim' ],
-          entries: ['src/js/**/*.js']
-      },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
