@@ -1,3 +1,5 @@
+import { MistakeOnThis } from './MistakeOnThis';
+
 /**
  * Mistake :  Incorrect references to this
  */
@@ -25,4 +27,5 @@ describe('MistakeOnThis : my favorite color', () => {
     //In an array function this is the same that the global method
     expect(myClass.thisBehaviorInArrayFunction()).toEqual(['Blue']);
   });
+
 });

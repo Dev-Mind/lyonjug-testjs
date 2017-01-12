@@ -1,7 +1,7 @@
 /**
  * Mistake :  Accidentally Using the Assignment Operator
  */
-describe('MistakeOnFloat', () => {
+describe('MistakeOnArayIndex', () => {
 
   it('normal case', () => {
     var color = ['blue', 'red'];

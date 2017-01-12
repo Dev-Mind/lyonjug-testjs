@@ -1,7 +1,7 @@
 /**
  * Mistake :  Incorrect references to this
  */
-class MistakeOnThis {
+export class MistakeOnThis {
 
   constructor(){
     this.colors  = ['Red', 'Blue', 'Yellow'];

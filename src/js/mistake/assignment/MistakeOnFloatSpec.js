@@ -13,6 +13,7 @@ describe('MistakeOnFloat', () => {
     var y = 0.2;
 
     expect(x + y).not.toBe(0.3);
+    expect((x + y).toFixed(1)).toBe('0.3');
     expect(x + y).toBe(0.30000000000000004);
 
     //OMG

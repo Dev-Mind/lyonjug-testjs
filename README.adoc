@@ -1,0 +1,32 @@
+= JavaScript et les tests
+
+[.text-center]
+image:src/img/logo_1500.png[Dev-Mind, align="center", width=600]
+
+Ce projet sert de support au talk donné au Lyon Jug sur les tests en JavaScript en janvier 2017. 
+
+Au niveau technique les sources sont toutes écrites en ES6. Au niveau de la gestion des modules JavaScript comme tout le monde le sait une partie a été spécifiée mais les implémentations sont diverses et parfois un peu compliqué. 
+
+Ici j'utilise webpack et babel pour pouvoir utiliser la syntaxe import/export de mes classes
+
+Pour résemé
+
+[cols="v,v"]
+|=======
+|Produit | DEscription
+| https://nodejs.org[node.js] | version > 6 (la version utilisée était la 6.9.2)
+| https://babeljs.io/[babel] | pour transpiler le code pour webpack
+| https://webpack.github.io/docs/[webpack] | pour la gestion des modules
+| https://karma-runner.github.io[karma] | pour exécuter les tests
+| https://jasmine.github.io/[jasmine] | pur écrire les tests
+|=======
+
+
+Pour installer le projet vous pouvez utiliser
+
+```html
+nvm use v6
+npm install -g yarn
+yarn install
+``` 
+

@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Thu Dec 15 2016 22:06:45 GMT+0100 (CET)
+var path = require('path');
 
 module.exports = function(config) {
   config.set({
@@ -15,7 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/js/**/*.js'
+      'tests.webpack.js'
     ],
 
 
@@ -27,12 +28,38 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'tests.webpack.js': ['webpack']
     },
 
+    webpack: {
+      cache: true,
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+      module: {
+        preLoaders: [
+          {
+            test: /Spec\.js$/,
+            include: /src\/js/,
+            exclude: /node_modules/,
+            loader: 'babel',
+            query: {
+              cacheDirectory: true,
+            },
+          }
+        ],
+
+        loaders: [{
+          test: /\.js$/,
+          //include: path.resolve(__dirname, '../src'),
+          include: /src\/js/,
+          exclude: /(node_modules|Spec\.js)/,
+          loader: 'babel-loader',
+          query: {
+            cacheDirectory: true,
+          }
+        }]
+      }
+    },
+
     reporters: ['progress'],
 
 
@@ -55,7 +82,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers:   ['Chrome'],
 
 
     // Continuous Integration mode
