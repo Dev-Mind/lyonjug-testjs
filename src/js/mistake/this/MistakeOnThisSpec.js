@@ -1,5 +1,3 @@
-import { MistakeOnThis } from './MistakeOnThis';
-
 /**
  * Mistake :  Incorrect references to this
  */

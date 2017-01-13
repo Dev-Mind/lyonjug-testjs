@@ -1,7 +1,7 @@
 /**
  * This class should be tested
  */
-export class Welcome {
+class Welcome {
 
   constructor(userService) {
     this.userService = userService;
